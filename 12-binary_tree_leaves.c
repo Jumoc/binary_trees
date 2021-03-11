@@ -3,17 +3,17 @@
 /**
  * binary_tree_leaves - returns the amounts of leaves on a given tree
  *
- * @tree: tree to operate
+ * @t: tree to operate
  *
  * Return: amount of leaves
  */
-size_t binary_tree_leaves(const binary_tree_t *tree)
+size_t binary_tree_leaves(const binary_tree_t *t)
 {
-	if (!tree)
-        return (0);
+	if (!t)
+		return (0);
 
-    if (!tree->left && !tree->right)
-        return(binary_tree_leaves(tree->left) + 1 + binary_tree_leaves(tree->right));
-    else
-        return(binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right));
+	if (!t->left && !t->right)
+		return (binary_tree_leaves(t->left) + 1 + binary_tree_leaves(t->right));
+	else
+		return (binary_tree_leaves(t->left) + binary_tree_leaves(t->right));
 }
